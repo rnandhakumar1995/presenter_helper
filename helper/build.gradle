@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.naaluzhavu.android'
+    PUBLISH_ARTIFACT_ID = 'presenter-helper'
+    PUBLISH_VERSION = '1.0'
+
+    bintrayRepo = 'Visiri' // your repo name
+    bintrayName = 'PresenterHelper' // has to be same as your library module name
+    publishedGroupId = 'com.naaluzhavu.helper' // your module package name
+    libraryName = 'helper'
+    artifact = 'helper' // has to be same as your library module name
+    siteUrl = 'https://github.com/rnandhakumar1995'
+    gitUrl = 'https://github.com/rnandhakumar1995/presenter_helper.git'
+    libraryDescription = 'A set of methods used to manipulate time object'
+    libraryVersion = '1.0'
+    developerId = 'nandhu'
+    developerName = 'NaalUzhavu'
+    developerEmail = 'naaluzhavu@gmail.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
+
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
+apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
