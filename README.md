@@ -2,7 +2,9 @@
 Helps to implement MVP easily
 
 Add the following gradle to your project.
-  compile 'com.naaluzhavu.helper:helper:0.0.5'
+
+compile 'com.naaluzhavu.helper:helper:0.0.5'
+
 Sync the Gradle.
 Once the gradle synced, the helper can be used anywhere in the project. The helper library contains two classes BasePresenter and BaseViewActivity.
 To use this, extend BaseViewActivity to your activity class. Now you can use methods like showToast, getText, isFilled, showAlert, showProgress, hideProgress, formatMongoDate, formatDate.
