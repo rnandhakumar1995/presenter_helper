@@ -3,7 +3,7 @@ Helps to implement MVP easily
 
 Add the following gradle to your project.
 
-compile 'com.naaluzhavu.helper:helper:0.0.5'
+implementation 'com.naaluzhavu.helper:helper:0.0.5'
 
 Sync the Gradle.
 Once the gradle synced, the helper can be used anywhere in the project. The helper library contains two classes BasePresenter and BaseViewActivity.
